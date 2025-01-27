@@ -17,15 +17,11 @@ spec:
           envFrom:
             - configMapRef:
                 name: "app-config"
-            
+
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 4566
               protocol: TCP
           volumeMounts:
             - name: data
               mountPath: /data
-      volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: data-pvc
